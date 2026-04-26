@@ -14,11 +14,17 @@
 .logotipo {
     font-size: 24px;
     font-weight: bold;
-    color: #007bff;
+    color: #f59e0b;
     display: flex;
     align-items: center;
     opacity: 0;
     animation: fadeInLeft 0.7s ease-out 0.1s forwards;
+}
+
+.logotipo::after {
+    color: #f59e0b;
+    margin-left: 2px;
+    font-size: 28px;
 }
 
 .menu-navegacao {
@@ -57,7 +63,7 @@
 }
 
 .link-navegacao.ativo {
-    color: #007bff;
+    color: #f59e0b;
 }
 
 .link-navegacao.ativo::after {
@@ -68,7 +74,7 @@
     transform: translateX(-50%);
     width: 6px;
     height: 6px;
-    background-color: #007bff;
+    background-color: #f59e0b;
     border-radius: 50%;
 }
 
@@ -89,7 +95,7 @@
 .linha-hamburguer {
     width: 25px;
     height: 3px;
-    background-color: #007bff;
+    background-color: #f59e0b;
     margin: 2px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -140,6 +146,7 @@
     }
 }
 
+/* Tablets em modo paisagem e dispositivos menores - Menu Hambúrguer (até 1024px) */
 @media (max-width: 1024px) {
     .barra-navegacao {
         padding: 15px 30px;
@@ -172,7 +179,7 @@
         z-index: 999;
     }
 
-    .menu-navegacao.aberto {
+    .menu-navegacao.ativo {
         right: 0;
     }
 
@@ -182,31 +189,31 @@
         transition: all 0.3s ease;
     }
 
-    .menu-navegacao.aberto .item-navegacao {
+    .menu-navegacao.ativo .item-navegacao {
         opacity: 1;
         transform: translateX(0);
         animation: none;
     }
 
-    .menu-navegacao.aberto .item-navegacao:nth-child(1) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(1) {
         transition-delay: 0.1s;
     }
 
-    .menu-navegacao.aberto .item-navegacao:nth-child(2) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(2) {
         transition-delay: 0.2s;
     }
 
-    .menu-navegacao.aberto .item-navegacao:nth-child(3) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(3) {
         transition-delay: 0.3s;
     }
 
-    .menu-navegacao.aberto .item-navegacao:nth-child(4) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(4) {
         transition-delay: 0.4s;
     }
-    .menu-navegacao.aberto .item-navegacao:nth-child(5) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(5) {
         transition-delay: 0.5s;
     }
-    .menu-navegacao.aberto .item-navegacao:nth-child(6) {
+    .menu-navegacao.ativo .item-navegacao:nth-child(6) {
         transition-delay: 0.6s;
     }
 
@@ -220,13 +227,13 @@
     }
 
     .link-navegacao:hover {
-        background-color: rgba(0, 123, 255, 0.2);
-        color: #007bff;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #f59e0b;
     }
 
     .link-navegacao.ativo {
-        background-color: rgba(0, 123, 255, 0.2);
-        color: #007bff;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #f59e0b;
     }
 
     .link-navegacao.ativo::after {
@@ -234,6 +241,7 @@
     }
 }
 
+/* Tablet portrait (769px - 1024px) */
 @media (max-width: 1024px) and (min-width: 769px) {
     .barra-navegacao {
         padding: 18px 35px;
@@ -253,6 +261,7 @@
     }
 }
 
+/* Tablet portrait e Mobile - (até 768px) */
 @media (max-width: 768px) {
     .barra-navegacao {
         padding: 15px 20px;
@@ -272,12 +281,14 @@
     }
 }
 
+/* Mobile grande (481px - 600px) */
 @media (max-width: 600px) and (min-width: 481px) {
     .link-navegacao {
         font-size: 22px;
     }
 }
 
+/* Mobile médio (320px - 480px) */
 @media (max-width: 480px) {
     .barra-navegacao {
         padding: 12px 15px;
@@ -297,6 +308,7 @@
     }
 }
 
+/* Mobile pequeno (até 319px) */
 @media (max-width: 319px) {
     .barra-navegacao {
         padding: 10px 12px;

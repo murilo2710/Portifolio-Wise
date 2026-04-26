@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Murilo</title>
+    <title>Murilo</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
@@ -13,38 +14,75 @@
     <main>
         <nav class="barra-navegacao">
             <div class="logotipo">Murilo</div>
-            <button class="botao-hamburguer" id="botaoHamburguer" aria-label="Abrir menu" aria-expanded="false">
+            <button class="botao-hamburguer" id="botaoHamburguer">
                 <span class="linha-hamburguer"></span>
                 <span class="linha-hamburguer"></span>
                 <span class="linha-hamburguer"></span>
             </button>
             <ul class="menu-navegacao" id="menuNavegacao">
-                <li class="item-navegacao"><a href="#home" class="link-navegacao ativo">Home</a></li>
-                <li class="item-navegacao"><a href="#sobre" class="link-navegacao">Sobre</a></li>
-                <li class="item-navegacao"><a href="#experiencia" class="link-navegacao">Experiencia</a></li>
-                <li class="item-navegacao"><a href="#competencias" class="link-navegacao">Competencias</a></li>
-                <li class="item-navegacao"><a href="#projetos" class="link-navegacao">Projetos</a></li>
-                <li class="item-navegacao"><a href="#contato" class="link-navegacao">Contato</a></li>
+                <li class="item-navegacao">
+                    <a href="#home" class="link-navegacao ativo">Home</a>
+                </li>
+                <li class="item-navegacao">
+                    <a href="#sobre" class="link-navegacao">Sobre</a>
+                </li>
+                <li class="item-navegacao">
+                    <a href="#experiencia" class="link-navegacao">Experiência</a>
+                </li>
+                <li class="item-navegacao">
+                    <a href="#competencias" class="link-navegacao">Competências</a>
+                </li>
+                <li class="item-navegacao">
+                    <a href="#projetos" class="link-navegacao">Projetos</a>
+                </li>
+                <li class="item-navegacao">
+                    <a href="#contato" class="link-navegacao">Contato</a>
+                </li>
             </ul>
         </nav>
 
         <section id="home" class="home">
             <div class="area-inicial">
                 <div class="conteudo-inicial">
-                    <h1>Ola, me chamo <br><span class="nome-destaque">Murilo Regnier</span></h1>
-                    <h2 class="texto-digitando">Sou <span id="texto"></span></h2>
-
-                    <div class="redes-sociais" id="contato">
-                        <a class="botao-rede" href="mailto:seuemail@gmail.com">Email</a>
-                        <a class="botao-rede" href="https://www.linkedin.com/in/seu-linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a class="botao-rede" href="https://github.com/seu-github" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <h1>Olá, me chamo <br><span class="nome-destaque">Murilo Regnier</span></h1>
+                    <h3 class="texto-digitando">Sou&nbsp;<span id="texto"></span><span class="cursor">|</span></h3>
+                    <div class="redes-sociais">
+                        <a class="botao-rede email"
+                           href="mailto:seuemail@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"
+                           aria-label="Enviar email">
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                        <a class="botao-rede linkedin"
+                           href="https://www.linkedin.com/in/murilo-regnier-9bb5aa270/"
+                           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a class="botao-rede github"
+                           href="https://github.com/murilo2710"
+                           target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
                     </div>
                 </div>
-
                 <div class="foto-perfil">
+                    <div class="orbita">
+                        <div class="bolinha-orbita"></div>
+                    </div>
                     <img src="img/foto.jpeg" alt="Foto de Murilo">
                 </div>
             </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2>Sobre mim</h2>
+        </section>
+
+        <section id="experiencia" class="sobre experiencia">
+            <h2>Experiência</h2>
+        </section>
+
+        <section id="competencias" class="sobre competencias">
+            <h2>Competências</h2>
         </section>
     </main>
 

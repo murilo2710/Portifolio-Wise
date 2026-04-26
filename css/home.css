@@ -1,75 +1,751 @@
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
 .area-inicial {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    min-height: 100vh;
+    padding: 0 8%;
+    max-width: 1400px;
+    margin: -40px auto 0;
+    position: relative;
+    z-index: 1;
 }
 
+.conteudo-inicial {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+
 .conteudo-inicial h1 {
-    font-size: 2.8rem;
+    font-size: 4rem;
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 12px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpText 0.7s ease-out 0.8s forwards;
 }
 
 .nome-destaque {
-    color: #0a66c2;
+    background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.conteudo-inicial h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: -0.5rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpText 0.7s ease-out 1.2s forwards;
 }
 
 .texto-digitando {
-    font-size: 1.5rem;
+    display: block;
+    font-size: 2.6rem;
     font-weight: 500;
-    color: #d9d9d9;
-    margin-bottom: 24px;
+    color: #f59e0b;
+    white-space: normal;
 }
 
 #texto {
-    color: #0a66c2;
+    display: inline-block;
+    margin-left: 0;
+}
+
+.cursor {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #f59e0b;
+    margin-left: 4px;
+    animation: blink 0.7s infinite;
 }
 
 .redes-sociais {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 24px;
+    position: static !important;
+    width: auto !important;
 }
 
 .botao-rede {
-    display: inline-block;
-    padding: 10px 14px;
-    border: 1px solid #0a66c2;
-    border-radius: 6px;
-    color: #0a66c2;
+    width: 56px;
+    height: 56px;
+    margin-top: 0;
+    border-radius: 50%;
+    display: grid !important;
+    place-items: center;
     text-decoration: none;
+    border: 2px solid #f59e0b;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.06);
+    backdrop-filter: blur(2px);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    position: static !important;
+    flex-shrink: 0;
+}
+
+.botao-rede:nth-child(1) { animation: fadeInUpScale 0.5s ease-out 2.0s forwards; }
+.botao-rede:nth-child(2) { animation: fadeInUpScale 0.5s ease-out 2.1s forwards; }
+.botao-rede:nth-child(3) { animation: fadeInUpScale 0.5s ease-out 2.2s forwards; }
+.botao-rede:nth-child(4) { animation: fadeInUpScale 0.5s ease-out 2.3s forwards; }
+
+.botao-rede i {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.botao-rede:hover,
+.botao-rede:focus-visible {
+    transform: scale(1.3) translateY(-5px);
+    background-color: #f59e0b;
+    box-shadow: 0 0 25px #f59e0b;
+    outline: none;
+    color: #fff !important;
+    border-color: #f59e0b;
+}
+
+.botao-rede:hover i,
+.botao-rede:focus-visible i {
+    color: #fff !important;
+}
+
+.botao-rede:focus-visible {
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+}
+
+.botao-rede.linkedin,
+.botao-rede.github,
+.botao-rede.email {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.foto-perfil {
+    flex-shrink: 0;
+    margin-left: 40px;
+    opacity: 0;
+    animation: fadeInPhoto 0.7s ease-out 1.0s forwards;
+    border-radius: 50%;
+    border: 3px solid rgba(217, 119, 6, 0.35);
+    padding: 0;
+    position: relative;
+}
+
+.orbita {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 490px;
+    height: 490px;
+    margin: -245px;
+    border: 2px solid rgba(245, 158, 11, 0.35);
+    border-radius: 50%;
+    animation: orbitaSpin 6s linear infinite;
+    pointer-events: none;
+}
+
+.bolinha-orbita {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #f59e0b;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #f59e0b, 0 0 4px #fff;
 }
 
 .foto-perfil img {
-    width: 260px;
-    height: 260px;
-    border-radius: 10px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    border: 2px solid #1f1f1f;
+    border-radius: 50%;
+    display: block;
 }
 
-@media (max-width: 900px) {
+.sobre,
+.experiencia {
+    width: 100%;
+    padding: 70px 8% 90px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre h2,
+.experiencia h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+@keyframes fadeInUpText {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpScale {
+    from {
+        transform: translateY(30px) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPhoto {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPhotoMobile {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes orbitaSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Tablets e Desktop médio (769px - 1440px) - Layout vertical centralizado */
+@media (min-width: 769px) and (max-width: 1440px) {
     .area-inicial {
-        flex-direction: column-reverse;
-        text-align: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 100vh;
+        padding: 60px 40px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        gap: 40px;
+        max-width: none !important;
+    }
+
+    .foto-perfil {
+        order: 1 !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-bottom: 0 !important;
+        opacity: 0;
+        animation: fadeInPhotoMobile 0.7s ease-out 1.0s forwards !important;
+        padding: 0;
+        position: relative !important;
+    }
+
+    .orbita {
+        width: 400px;
+        height: 400px;
+        margin: -200px;
+    }
+
+    .foto-perfil img {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .conteudo-inicial {
+        order: 2 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        flex: none !important;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: 2.8rem !important;
+    }
+
+    .conteudo-inicial h3 {
+        font-size: 2rem !important;
+    }
+
+    .texto-digitando {
+        font-size: 1.8rem !important;
     }
 
     .redes-sociais {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 35px !important;
+        gap: 18px !important;
+    }
+
+    .botao-rede {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .botao-rede i {
+        font-size: 24px !important;
+    }
+
+}
+
+/* Desktop grande (1441px+) - Layout horizontal */
+@media (min-width: 1441px) {
+    .area-inicial {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 100vh;
+        padding: 0 5% !important;
+        max-width: 1400px !important;
+        margin: -60px auto 0 !important;
+        position: relative;
+        text-align: left !important;
+        gap: 0 !important;
+    }
+
+    .conteudo-inicial {
+        flex: 1 !important;
+        max-width: 600px !important;
+        position: relative;
+        order: 1 !important;
+        margin: 0 !important;
+    }
+
+    .foto-perfil {
+        flex-shrink: 0;
+        margin-left: 40px !important;
+        margin: 0 0 0 40px !important;
+        opacity: 0;
+        animation: fadeInPhoto 0.7s ease-out 1.0s forwards !important;
+        padding: 0;
+        order: 2 !important;
+        position: relative !important;
+    }
+
+    .foto-perfil img {
+        width: 400px !important;
+        height: 400px !important;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: 3.2rem !important;
+    }
+
+    .conteudo-inicial h3 {
+        font-size: 2.3rem !important;
+    }
+
+    .texto-digitando {
+        font-size: 2rem !important;
+    }
+
+    .redes-sociais {
+        justify-content: flex-start !important;
+    }
+
+    .botao-rede:nth-child(1) { animation: fadeInUpScale 0.5s ease-out 2.0s forwards !important; }
+    .botao-rede:nth-child(2) { animation: fadeInUpScale 0.5s ease-out 2.1s forwards !important; }
+    .botao-rede:nth-child(3) { animation: fadeInUpScale 0.5s ease-out 2.2s forwards !important; }
+
+}
+
+/* Tablets portrait menores (769px - 1000px) */
+@media (min-width: 769px) and (max-width: 1000px) {
+    .foto-perfil img {
+        width: 280px !important;
+        height: 280px !important;
+    }
+}
+
+/* Tablets portrait (601px - 768px) - Layout vertical otimizado */
+@media (min-width: 601px) and (max-width: 768px) {
+    .area-inicial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        min-height: 100vh;
+        padding: 70px 35px;
+        text-align: center;
+        margin: 0 auto;
+        gap: 35px;
+    }
+
+    .foto-perfil {
+        order: 1;
+        margin: 0;
+        opacity: 0;
+        animation: fadeInPhotoMobile 0.7s ease-out 1.0s forwards;
+        padding: 0;
+        position: relative;
+    }
+
+    .orbita {
+        width: 380px;
+        height: 380px;
+        margin: -190px;
+    }
+
+    .foto-perfil img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .conteudo-inicial {
+        order: 2;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: 2.6rem;
+    }
+
+    .conteudo-inicial h3 {
+        font-size: 1.9rem;
+    }
+
+    .texto-digitando {
+        font-size: 1.7rem;
+    }
+
+    .redes-sociais {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        gap: 16px;
+    }
+
+    .botao-rede {
+        width: 54px;
+        height: 54px;
+    }
+
+    .botao-rede i {
+        font-size: 23px;
+    }
+
+    .sobre,
+    .experiencia {
+        padding: 70px 6% 85px;
+    }
+
+}
+
+/* Mobile grande (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .area-inicial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 80px 25px;
+        text-align: center;
+        margin: 0 auto;
+        gap: 25px;
+    }
+
+    .foto-perfil {
+        order: 1;
+        margin: 0;
+        padding: 0;
+        animation: fadeInPhotoMobile 0.7s ease-out 1.0s forwards;
+        position: relative;
+    }
+
+    .orbita {
+        width: 280px;
+        height: 280px;
+        margin: -140px;
+    }
+
+    .bolinha-orbita {
+        width: 12px;
+        height: 12px;
+        top: -6px;
+    }
+
+    .foto-perfil img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .conteudo-inicial {
+        order: 2;
+        max-width: 100%;
+        margin: 0;
     }
 
     .conteudo-inicial h1 {
         font-size: 2.2rem;
     }
+
+    .conteudo-inicial h3 {
+        font-size: 1.5rem;
+    }
+
+    .texto-digitando {
+        font-size: 1.4rem;
+    }
+
+
+    .redes-sociais {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        gap: 16px;
+    }
+
+    .botao-rede {
+        width: 50px;
+        height: 50px;
+    }
+
+    .botao-rede i {
+        font-size: 20px;
+    }
+
+    .sobre,
+    .experiencia {
+        padding: 65px 6% 80px;
+    }
+
+    .sobre h2,
+    .experiencia h2 {
+        padding: 0;
+    }
+
+}
+
+/* Mobile médio (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+    .area-inicial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 70px 20px;
+        text-align: center;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .foto-perfil {
+        order: 1;
+        margin: 0;
+        padding: 0;
+        animation: fadeInPhotoMobile 0.7s ease-out 1.0s forwards;
+        position: relative;
+    }
+
+    .orbita {
+        width: 260px;
+        height: 260px;
+        margin: -130px;
+    }
+
+    .bolinha-orbita {
+        width: 12px;
+        height: 12px;
+        top: -6px;
+    }
+
+    .foto-perfil img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .conteudo-inicial {
+        order: 2;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: 2rem;
+    }
+
+    .conteudo-inicial h3 {
+        font-size: 1.3rem;
+    }
+
+    .texto-digitando {
+        font-size: 1.3rem;
+    }
+
+
+    .redes-sociais {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        gap: 12px;
+    }
+
+    .botao-rede {
+        width: 48px;
+        height: 48px;
+    }
+
+    .botao-rede i {
+        font-size: 19px;
+    }
+
+    .sobre,
+    .experiencia {
+        padding: 60px 5% 75px;
+    }
+
+    .sobre h2,
+    .experiencia h2 {
+        padding: 0;
+    }
+
+}
+
+/* Mobile pequeno (até 320px) */
+@media (max-width: 320px) {
+    .area-inicial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 60px 15px;
+        text-align: center;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .foto-perfil {
+        order: 1;
+        margin: 0;
+        padding: 0;
+        animation: fadeInPhotoMobile 0.7s ease-out 1.0s forwards;
+        position: relative;
+    }
+
+    .orbita {
+        width: 240px;
+        height: 240px;
+        margin: -120px;
+    }
+
+    .bolinha-orbita {
+        width: 10px;
+        height: 10px;
+        top: -5px;
+    }
+
+    .foto-perfil img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .conteudo-inicial {
+        order: 2;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: 1.8rem;
+    }
+
+    .conteudo-inicial h3 {
+        font-size: 1.2rem;
+    }
+
+    .texto-digitando {
+        font-size: 1.2rem;
+    }
+
+    .etiqueta-frontend {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+    }
+
+    .redes-sociais {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .botao-rede {
+        width: 45px;
+        height: 45px;
+    }
+
+    .botao-rede i {
+        font-size: 18px;
+    }
+
+    .sobre,
+    .experiencia {
+        padding: 55px 5% 70px;
+    }
+
+    .sobre h2,
+    .experiencia h2 {
+        padding: 0;
+    }
+
 }
