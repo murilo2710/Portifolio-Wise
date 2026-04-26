@@ -179,19 +179,15 @@
 .sobre,
 .experiencia {
     width: 100%;
-    padding: 70px 8% 90px;
+    padding: 100px 8%;
     position: relative;
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.sobre h2,
-.experiencia h2 {
+.experiencia h2,
+.sobre-titulo-topo {
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
-    color: #fff;
     background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
     -webkit-background-clip: text;
     background-clip: text;
@@ -201,6 +197,147 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
+}
+
+/* ── Sobre mim ── */
+.sobre-titulo-topo {
+    display: block;
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(-28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sobre-titulo-topo.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sobre-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.sobre-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    border-radius: 16px;
+    padding: 48px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 165px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.info-card.visivel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.info-card:hover {
+    background: rgba(245, 158, 11, 0.06);
+    border-color: rgba(245, 158, 11, 0.4);
+    transform: translateY(-4px);
+}
+
+.info-card-icone {
+    width: 44px;
+    height: 44px;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: #f59e0b;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.info-card-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+}
+
+.info-card-valor {
+    display: block;
+    font-size: 0.92rem;
+    color: #e0e0e0;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.sobre-texto {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sobre-texto.visivel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sobre-texto h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.sobre-destaque {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sobre-texto p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+
+.sobre-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 11px 28px;
+    border: 1.5px solid #f59e0b;
+    border-radius: 50px;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #f59e0b;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.sobre-btn:hover {
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.7), 0 0 40px rgba(245, 158, 11, 0.3);
+    transform: translateY(-2px);
 }
 
 
@@ -394,6 +531,53 @@
     .botao-rede:nth-child(2) { animation: fadeInUpScale 0.5s ease-out 2.1s forwards !important; }
     .botao-rede:nth-child(3) { animation: fadeInUpScale 0.5s ease-out 2.2s forwards !important; }
 
+}
+
+/* Sobre mim responsivo */
+@media (max-width: 900px) {
+    .sobre-container {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .sobre-cards {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-card {
+        min-width: unset;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-btn {
+        margin: 16px auto 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .info-card {
+        padding: 16px 12px;
+        gap: 10px;
+    }
+
+    .info-card-icone {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .info-card-valor {
+        font-size: 0.82rem;
+    }
 }
 
 /* Tablets portrait menores (769px - 1000px) */

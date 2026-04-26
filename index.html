@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
     <main>
         <nav class="barra-navegacao">
@@ -48,18 +50,16 @@
                     <h3 class="texto-digitando">Sou&nbsp;<span id="texto"></span><span class="cursor">|</span></h3>
                     <div class="redes-sociais">
                         <a class="botao-rede email"
-                           href="mailto:seuemail@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"
-                           aria-label="Enviar email">
+                            href="mailto:seuemail@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"
+                            aria-label="Enviar email">
                             <i class='bx bx-envelope'></i>
                         </a>
-                        <a class="botao-rede linkedin"
-                           href="https://www.linkedin.com/in/murilo-regnier-9bb5aa270/"
-                           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a class="botao-rede linkedin" href="https://www.linkedin.com/in/murilo-regnier-9bb5aa270/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
                             <i class='bx bxl-linkedin'></i>
                         </a>
-                        <a class="botao-rede github"
-                           href="https://github.com/murilo2710"
-                           target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a class="botao-rede github" href="https://github.com/murilo2710" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub">
                             <i class='bx bxl-github'></i>
                         </a>
                     </div>
@@ -74,7 +74,52 @@
         </section>
 
         <section id="sobre" class="sobre">
-            <h2>Sobre mim</h2>
+            <h2 class="sobre-titulo-topo">Sobre mim</h2>
+            <div class="sobre-container">
+
+                <div class="sobre-cards">
+                    <div class="info-card">
+                        <div class="info-card-icone"><i class='bx bx-user'></i></div>
+                        <div class="info-card-conteudo">
+                            <span class="info-card-label">Idade</span>
+                            <span class="info-card-valor">19 anos</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icone"><i class='bx bx-map-pin'></i></div>
+                        <div class="info-card-conteudo">
+                            <span class="info-card-label">Localização</span>
+                            <span class="info-card-valor">Brasil</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icone"><i class='bx bx-book-open'></i></div>
+                        <div class="info-card-conteudo">
+                            <span class="info-card-label">Formação</span>
+                            <span class="info-card-valor">Eng. de Software</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icone"><i class='bx bx-code-alt'></i></div>
+                        <div class="info-card-conteudo">
+                            <span class="info-card-label">Foco</span>
+                            <span class="info-card-valor">Full Stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sobre-texto">
+                    <p>Sou estudante de Engenharia de Software apaixonado por criar experiências digitais modernas e
+                        funcionais. Busco sempre unir boas práticas de desenvolvimento com um design limpo e intuitivo.
+                    </p>
+                    <p>Tenho experiência com tecnologias como Angular, Java e Spring Boot, e estou em constante
+                        evolução, explorando novos desafios e oportunidades na área de tecnologia.</p>
+                    <a href="#" class="sobre-btn">
+                        <i class='bx bx-download'></i> Download CV
+                    </a>
+                </div>
+
+            </div>
         </section>
 
         <section id="experiencia" class="sobre experiencia">
@@ -84,9 +129,13 @@
         <section id="competencias" class="sobre competencias">
             <h2>Competências</h2>
         </section>
+
+        <!-- Adicione as demais seções aqui: contato -->
+
     </main>
 
     <script src="js/navbar.js" defer></script>
     <script src="js/home.js" defer></script>
 </body>
+
 </html>
