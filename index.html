@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Murilo</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <main>
+        <nav class="barra-navegacao">
+            <div class="logotipo">Murilo</div>
+            <button class="botao-hamburguer" id="botaoHamburguer" aria-label="Abrir menu" aria-expanded="false">
+                <span class="linha-hamburguer"></span>
+                <span class="linha-hamburguer"></span>
+                <span class="linha-hamburguer"></span>
+            </button>
+            <ul class="menu-navegacao" id="menuNavegacao">
+                <li class="item-navegacao"><a href="#home" class="link-navegacao ativo">Home</a></li>
+                <li class="item-navegacao"><a href="#sobre" class="link-navegacao">Sobre</a></li>
+                <li class="item-navegacao"><a href="#experiencia" class="link-navegacao">Experiencia</a></li>
+                <li class="item-navegacao"><a href="#competencias" class="link-navegacao">Competencias</a></li>
+                <li class="item-navegacao"><a href="#projetos" class="link-navegacao">Projetos</a></li>
+                <li class="item-navegacao"><a href="#contato" class="link-navegacao">Contato</a></li>
+            </ul>
+        </nav>
+
         <section id="home" class="home">
             <div class="area-inicial">
                 <div class="conteudo-inicial">
@@ -29,6 +48,7 @@
         </section>
     </main>
 
+    <script src="js/navbar.js" defer></script>
     <script src="js/home.js" defer></script>
 </body>
 </html>
