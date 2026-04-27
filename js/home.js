@@ -274,9 +274,47 @@ const SobreAnimation = {
     }
 };
 
+
+const CompetenciasAnimation = {
+    inicializar() {
+        const titulo = document.querySelector('.competencias-titulo-topo');
+        const cards = document.querySelectorAll('.comp-card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                if (entry.target === titulo) {
+                    titulo.classList.add('visivel');
+                }
+
+                if (entry.target.classList.contains('competencias-grid')) {
+                    cards.forEach((card, i) => {
+                        setTimeout(() => {
+                            card.classList.add('visivel');
+                            const barra = card.querySelector('.comp-barra');
+                            if (barra) {
+                                barra.style.width = barra.dataset.nivel + '%';
+                            }
+                        }, i * 80);
+                    });
+                }
+
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.1 });
+
+        if (titulo) observer.observe(titulo);
+
+        const grid = document.querySelector('.competencias-grid');
+        if (grid) observer.observe(grid);
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     TypewriterAnimation.iniciar();
     ScrollIndicator.inicializar();
     adicionarEstilosPersonalizados();
     SobreAnimation.inicializar();
+    CompetenciasAnimation.inicializar();
 });
