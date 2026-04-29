@@ -311,10 +311,27 @@ const CompetenciasAnimation = {
     }
 };
 
+const ExperienciaAnimation = {
+    inicializar() {
+        const items = document.querySelectorAll('.exp-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visivel');
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.15 });
+
+        items.forEach(item => observer.observe(item));
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     TypewriterAnimation.iniciar();
     ScrollIndicator.inicializar();
     adicionarEstilosPersonalizados();
     SobreAnimation.inicializar();
     CompetenciasAnimation.inicializar();
+    ExperienciaAnimation.inicializar();
 });

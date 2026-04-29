@@ -187,7 +187,8 @@
 .experiencia h2,
 .experiencia-titulo-topo,
 .competencias-titulo-topo,
-.sobre-titulo-topo {
+.sobre-titulo-topo,
+.contato-titulo-topo {
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
     background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
@@ -207,6 +208,103 @@
     width: 100%;
     text-align: center;
     margin-bottom: 60px;
+}
+
+/* ── Lista de experiências ── */
+.experiencia-lista {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0 48px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.exp-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exp-item.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-periodo {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-top: 6px;
+}
+
+.exp-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exp-cabecalho {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.exp-titulo {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.exp-link {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+    transition: color 0.2s ease;
+}
+
+.exp-link:hover {
+    color: #f59e0b;
+}
+
+.exp-subtitulo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #f59e0b;
+    letter-spacing: 0.02em;
+}
+
+.exp-descricao {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.exp-tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 4px 14px;
+    letter-spacing: 0.03em;
 }
 
 .competencias-titulo-topo {
@@ -236,6 +334,13 @@
 .sobre-titulo-topo.visivel {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ── Contato ── */
+.contato-titulo-topo {
+    display: block;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .sobre-container {
@@ -1078,6 +1183,16 @@
     .sobre h2,
     .experiencia h2 {
         padding: 0;
+    }
+
+    .exp-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 32px 0;
+    }
+
+    .exp-periodo {
+        padding-top: 0;
     }
 
 }
