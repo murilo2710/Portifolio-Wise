@@ -293,9 +293,7 @@ const CompetenciasAnimation = {
                         setTimeout(() => {
                             card.classList.add('visivel');
                             const barra = card.querySelector('.comp-barra');
-                            if (barra) {
-                                barra.style.width = barra.dataset.nivel + '%';
-                            }
+                            if (barra) barra.style.width = barra.dataset.nivel + '%';
                         }, i * 80);
                     });
                 }
@@ -305,7 +303,6 @@ const CompetenciasAnimation = {
         }, { threshold: 0.1 });
 
         if (titulo) observer.observe(titulo);
-
         const grid = document.querySelector('.competencias-grid');
         if (grid) observer.observe(grid);
     }
@@ -327,6 +324,53 @@ const ExperienciaAnimation = {
     }
 };
 
+const OrbitaAnimation = {
+    inicializar() {
+        const b1 = document.getElementById('bolinha1');
+        const b2 = document.getElementById('bolinha2');
+        if (!b1 || !b2) return;
+
+        const R = 245;
+        const CENTER = 245;
+        const THRESHOLD = 0.12;
+        let cooldown = 0;
+
+        let a1 = 0;
+        let a2 = Math.PI;
+        let v1 = 0.016;
+        let v2 = -0.013;
+
+        function posicionar(ball, angle) {
+            ball.style.left = (CENTER + R * Math.sin(angle)) + 'px';
+            ball.style.top  = (CENTER - R * Math.cos(angle)) + 'px';
+        }
+
+        function angularDist(a, b) {
+            let d = Math.abs(a - b) % (2 * Math.PI);
+            return d > Math.PI ? 2 * Math.PI - d : d;
+        }
+
+        function tick() {
+            a1 += v1;
+            a2 += v2;
+            posicionar(b1, a1);
+            posicionar(b2, a2);
+
+            if (cooldown > 0) {
+                cooldown--;
+            } else if (angularDist(a1, a2) < THRESHOLD) {
+                v1 = -v1;
+                v2 = -v2;
+                cooldown = 30;
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        tick();
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     TypewriterAnimation.iniciar();
     ScrollIndicator.inicializar();
@@ -334,4 +378,5 @@ document.addEventListener('DOMContentLoaded', () => {
     SobreAnimation.inicializar();
     CompetenciasAnimation.inicializar();
     ExperienciaAnimation.inicializar();
+    OrbitaAnimation.inicializar();
 });

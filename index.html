@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
     <main>
         <nav class="barra-navegacao">
@@ -50,25 +48,30 @@
                     <h3 class="texto-digitando">Sou&nbsp;<span id="texto"></span><span class="cursor">|</span></h3>
                     <div class="redes-sociais">
                         <a class="botao-rede email"
-                            href="mailto:seuemail@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"
-                            aria-label="Enviar email">
+                           href="mailto:seuemail@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"
+                           aria-label="Enviar email">
                             <i class='bx bx-envelope'></i>
                         </a>
-                        <a class="botao-rede linkedin" href="https://www.linkedin.com/in/murilo-regnier-9bb5aa270/" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a class="botao-rede linkedin"
+                           href="https://www.linkedin.com/in/murilo-regnier-9bb5aa270/"
+                           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <i class='bx bxl-linkedin'></i>
                         </a>
-                        <a class="botao-rede github" href="https://github.com/murilo2710" target="_blank"
-                            rel="noopener noreferrer" aria-label="GitHub">
+                        <a class="botao-rede github"
+                           href="https://github.com/murilo2710"
+                           target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <i class='bx bxl-github'></i>
                         </a>
                     </div>
                 </div>
                 <div class="foto-perfil">
                     <div class="orbita">
-                        <div class="bolinha-orbita"></div>
+                        <div class="bolinha-orbita" id="bolinha1"></div>
+                        <div class="bolinha-orbita" id="bolinha2"></div>
                     </div>
                     <img src="img/foto.jpeg" alt="Foto de Murilo">
+                    <div class="badge badge-topo"><i class='bx bx-code-alt'></i> Full Stack Dev</div>
+                    <div class="badge badge-base"><i class='bx bx-book-open'></i> Eng. de Software</div>
                 </div>
             </div>
         </section>
@@ -109,11 +112,8 @@
                 </div>
 
                 <div class="sobre-texto">
-                    <p>Sou estudante de Engenharia de Software apaixonado por criar experiências digitais modernas e
-                        funcionais. Busco sempre unir boas práticas de desenvolvimento com um design limpo e intuitivo.
-                    </p>
-                    <p>Tenho experiência com tecnologias como Angular, Java e Spring Boot, e estou em constante
-                        evolução, explorando novos desafios e oportunidades na área de tecnologia.</p>
+                    <p>Sou estudante de Engenharia de Software apaixonado por criar experiências digitais modernas e funcionais. Busco sempre unir boas práticas de desenvolvimento com um design limpo e intuitivo.</p>
+                    <p>Tenho experiência com tecnologias como Angular, Java e Spring Boot, e estou em constante evolução, explorando novos desafios e oportunidades na área de tecnologia.</p>
                     <a href="#" class="sobre-btn">
                         <i class='bx bx-download'></i> Download CV
                     </a>
@@ -134,8 +134,7 @@
                             <a href="#" class="exp-link" aria-label="Ver mais"><i class='bx bx-link-external'></i></a>
                         </div>
                         <p class="exp-subtitulo">Conteúdo temporário</p>
-                        <p class="exp-descricao">Esta seção será atualizada em breve com informações reais sobre minha
-                            trajetória e experiências.</p>
+                        <p class="exp-descricao">Esta seção será atualizada em breve com informações reais sobre minha trajetória e experiências.</p>
                         <div class="exp-tags">
                             <span class="exp-tag">Em breve</span>
                             <span class="exp-tag">Atualização</span>
@@ -152,8 +151,7 @@
                             <a href="#" class="exp-link" aria-label="Ver mais"><i class='bx bx-link-external'></i></a>
                         </div>
                         <p class="exp-subtitulo">Conteúdo temporário</p>
-                        <p class="exp-descricao">Espaço reservado para detalhar cursos, certificações e etapas relevantes
-                            do meu desenvolvimento técnico.</p>
+                        <p class="exp-descricao">Espaço reservado para detalhar cursos, certificações e etapas relevantes do meu desenvolvimento técnico.</p>
                         <div class="exp-tags">
                             <span class="exp-tag">Estudos</span>
                             <span class="exp-tag">Formação</span>
@@ -170,8 +168,7 @@
                             <a href="#" class="exp-link" aria-label="Ver mais"><i class='bx bx-link-external'></i></a>
                         </div>
                         <p class="exp-subtitulo">Conteúdo temporário</p>
-                        <p class="exp-descricao">Seção provisória para apresentar projetos autorais e resultados práticos
-                            que serão publicados nas próximas atualizações.</p>
+                        <p class="exp-descricao">Seção provisória para apresentar projetos autorais e resultados práticos que serão publicados nas próximas atualizações.</p>
                         <div class="exp-tags">
                             <span class="exp-tag">Projetos</span>
                             <span class="exp-tag">Prática</span>
@@ -187,77 +184,77 @@
             <h2 class="competencias-titulo-topo">Competências</h2>
             <div class="competencias-grid">
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-angular'></i></div>
-                    <h3 class="comp-card-nome">Angular</h3>
-                    <span class="comp-card-nivel">Intermediário</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="75"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-angular'></i></div>
+                        <h3 class="comp-card-nome">Angular</h3>
+                        <span class="comp-card-nivel">Intermediário</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="75"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-java'></i></div>
-                    <h3 class="comp-card-nome">Java</h3>
-                    <span class="comp-card-nivel">Intermediário</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="70"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-java'></i></div>
+                        <h3 class="comp-card-nome">Java</h3>
+                        <span class="comp-card-nivel">Intermediário</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="70"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bx-leaf'></i></div>
-                    <h3 class="comp-card-nome">Spring Boot</h3>
-                    <span class="comp-card-nivel">Básico</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="55"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bx-leaf'></i></div>
+                        <h3 class="comp-card-nome">Spring Boot</h3>
+                        <span class="comp-card-nivel">Básico</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="55"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-typescript'></i></div>
-                    <h3 class="comp-card-nome">TypeScript</h3>
-                    <span class="comp-card-nivel">Intermediário</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="72"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-typescript'></i></div>
+                        <h3 class="comp-card-nome">TypeScript</h3>
+                        <span class="comp-card-nivel">Intermediário</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="72"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-react'></i></div>
-                    <h3 class="comp-card-nome">React</h3>
-                    <span class="comp-card-nivel">Básico</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="50"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-react'></i></div>
+                        <h3 class="comp-card-nome">React</h3>
+                        <span class="comp-card-nivel">Básico</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="50"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-postgresql'></i></div>
-                    <h3 class="comp-card-nome">PostgreSQL</h3>
-                    <span class="comp-card-nivel">Básico</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="55"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-postgresql'></i></div>
+                        <h3 class="comp-card-nome">PostgreSQL</h3>
+                        <span class="comp-card-nivel">Básico</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="55"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-docker'></i></div>
-                    <h3 class="comp-card-nome">Docker</h3>
-                    <span class="comp-card-nivel">Básico</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="45"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-docker'></i></div>
+                        <h3 class="comp-card-nome">Docker</h3>
+                        <span class="comp-card-nivel">Básico</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="45"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="comp-card">
-                    <div class="comp-card-icone"><i class='bx bxl-git'></i></div>
-                    <h3 class="comp-card-nome">Git</h3>
-                    <span class="comp-card-nivel">Avançado</span>
-                    <div class="comp-barra-wrapper">
-                        <div class="comp-barra" data-nivel="85"></div>
+                    <div class="comp-card">
+                        <div class="comp-card-icone"><i class='bx bxl-git'></i></div>
+                        <h3 class="comp-card-nome">Git</h3>
+                        <span class="comp-card-nivel">Avançado</span>
+                        <div class="comp-barra-wrapper">
+                            <div class="comp-barra" data-nivel="85"></div>
+                        </div>
                     </div>
-                </div>
 
             </div>
         </section>
@@ -265,7 +262,6 @@
         <section id="projetos" class="sobre projetos">
             <h2 class="projetos-titulo-topo">Projetos</h2>
         </section>
-
 
         <section id="contato" class="sobre contato">
             <h2 class="contato-titulo-topo">Contato</h2>
@@ -276,5 +272,4 @@
     <script src="js/navbar.js" defer></script>
     <script src="js/home.js" defer></script>
 </body>
-
 </html>
