@@ -278,7 +278,7 @@ const SobreAnimation = {
 const CompetenciasAnimation = {
     inicializar() {
         const titulo = document.querySelector('.competencias-titulo-topo');
-        const cards = document.querySelectorAll('.comp-card');
+        const grid1 = document.querySelector('.competencias-pagina[data-pag="1"] .competencias-grid');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -288,7 +288,8 @@ const CompetenciasAnimation = {
                     titulo.classList.add('visivel');
                 }
 
-                if (entry.target.classList.contains('competencias-grid')) {
+                if (entry.target === grid1) {
+                    const cards = grid1.querySelectorAll('.comp-card');
                     cards.forEach((card, i) => {
                         setTimeout(() => {
                             card.classList.add('visivel');
@@ -303,8 +304,45 @@ const CompetenciasAnimation = {
         }, { threshold: 0.1 });
 
         if (titulo) observer.observe(titulo);
-        const grid = document.querySelector('.competencias-grid');
-        if (grid) observer.observe(grid);
+        if (grid1) observer.observe(grid1);
+    }
+};
+
+const PaginacaoCompetencias = {
+    pagAtual: 1,
+    total: 2,
+
+    inicializar() {
+        document.querySelectorAll('.pag-dot').forEach(dot => {
+            dot.addEventListener('click', () => this.irPara(Number(dot.dataset.pag)));
+        });
+        document.getElementById('pagAnterior')?.addEventListener('click', () => {
+            this.irPara(this.pagAtual === 1 ? this.total : this.pagAtual - 1);
+        });
+        document.getElementById('pagProxima')?.addEventListener('click', () => {
+            this.irPara(this.pagAtual === this.total ? 1 : this.pagAtual + 1);
+        });
+    },
+
+    irPara(pag) {
+        this.pagAtual = pag;
+
+        document.querySelectorAll('.pag-dot').forEach(d => d.classList.remove('ativo'));
+        document.querySelector(`.pag-dot[data-pag="${pag}"]`).classList.add('ativo');
+
+        document.querySelectorAll('.competencias-pagina').forEach(p => p.classList.remove('ativa'));
+        const pagAtiva = document.querySelector(`.competencias-pagina[data-pag="${pag}"]`);
+        pagAtiva.classList.add('ativa');
+
+        pagAtiva.querySelectorAll('.comp-card').forEach((card, i) => {
+            card.classList.remove('visivel');
+            card.querySelector('.comp-barra').style.width = '0%';
+            setTimeout(() => {
+                card.classList.add('visivel');
+                const barra = card.querySelector('.comp-barra');
+                if (barra) barra.style.width = barra.dataset.nivel + '%';
+            }, i * 80);
+        });
     }
 };
 
@@ -379,4 +417,5 @@ document.addEventListener('DOMContentLoaded', () => {
     CompetenciasAnimation.inicializar();
     ExperienciaAnimation.inicializar();
     OrbitaAnimation.inicializar();
+    PaginacaoCompetencias.inicializar();
 });
