@@ -364,12 +364,13 @@ const ExperienciaAnimation = {
 
 const OrbitaAnimation = {
     inicializar() {
+        const orbita = document.querySelector('.orbita');
         const b1 = document.getElementById('bolinha1');
         const b2 = document.getElementById('bolinha2');
-        if (!b1 || !b2) return;
+        if (!orbita || !b1 || !b2) return;
 
-        const R = 245;
-        const CENTER = 245;
+        let radius = orbita.clientWidth / 2;
+        let center = orbita.clientWidth / 2;
         const THRESHOLD = 0.12;
         let cooldown = 0;
 
@@ -378,9 +379,15 @@ const OrbitaAnimation = {
         let v1 = 0.016;
         let v2 = -0.013;
 
+        function atualizarGeometria() {
+            const size = orbita.clientWidth;
+            center = size / 2;
+            radius = size / 2;
+        }
+
         function posicionar(ball, angle) {
-            ball.style.left = (CENTER + R * Math.sin(angle)) + 'px';
-            ball.style.top  = (CENTER - R * Math.cos(angle)) + 'px';
+            ball.style.left = (center + radius * Math.sin(angle)) + 'px';
+            ball.style.top = (center - radius * Math.cos(angle)) + 'px';
         }
 
         function angularDist(a, b) {
@@ -405,6 +412,8 @@ const OrbitaAnimation = {
             requestAnimationFrame(tick);
         }
 
+        atualizarGeometria();
+        window.addEventListener('resize', atualizarGeometria);
         tick();
     }
 };

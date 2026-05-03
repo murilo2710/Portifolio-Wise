@@ -904,8 +904,8 @@
     to   { transform: rotate(360deg); }
 }
 
-/* Tablets e Desktop médio (769px - 1440px) - Layout vertical centralizado */
-@media (min-width: 769px) and (max-width: 1440px) {
+/* Tablets (769px - 1024px) - Layout vertical centralizado */
+@media (min-width: 769px) and (max-width: 1024px) {
     .area-inicial {
         display: flex !important;
         flex-direction: column !important;
@@ -980,8 +980,8 @@
 
 }
 
-/* Desktop grande (1441px+) - Layout horizontal */
-@media (min-width: 1441px) {
+/* Desktop (1025px+) - Layout horizontal */
+@media (min-width: 1025px) {
     .area-inicial {
         display: flex !important;
         flex-direction: row !important;
@@ -1469,4 +1469,82 @@
         padding-top: 0;
     }
 
+}
+
+/* Ajustes finais de responsividade */
+@media (max-width: 1024px) {
+    .area-inicial {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .conteudo-inicial h1 {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        line-height: 1.25;
+    }
+
+    .conteudo-inicial h3,
+    .texto-digitando {
+        font-size: clamp(1.25rem, 4.6vw, 2rem);
+    }
+
+    .badge {
+        max-width: calc(100vw - 32px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre,
+    .experiencia,
+    .competencias,
+    .contato,
+    .projetos {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .orbita {
+        width: 300px;
+        height: 300px;
+        margin: -150px;
+    }
+
+    .foto-perfil img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .badge-topo {
+        top: 8%;
+        right: -2%;
+    }
+
+    .badge-base {
+        bottom: 8%;
+        left: -2%;
+    }
+
+    .exp-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .exp-periodo {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .badge {
+        display: none;
+    }
+
+    .contato-item-valor {
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+    }
 }
