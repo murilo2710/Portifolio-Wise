@@ -1,6 +1,7 @@
 const slides = document.querySelectorAll('.mockups-wrapper');
 const dotsContainer = document.getElementById('carrosselDots');
 let atual = 0;
+let autoplayId = null;
 
 slides.forEach((_, i) => {
     const dot = document.createElement('button');
@@ -36,7 +37,18 @@ function irPara(index) {
 
 irPara(0);
 
-setInterval(() => irPara(atual + 1), 7000);
+function iniciarAutoplay() {
+    if (autoplayId) return;
+    autoplayId = setInterval(() => irPara(atual + 1), 7000);
+}
+
+function pausarAutoplay() {
+    if (!autoplayId) return;
+    clearInterval(autoplayId);
+    autoplayId = null;
+}
+
+iniciarAutoplay();
 
 document.getElementById('projetoAnterior')?.addEventListener('click', () => irPara(atual - 1));
 document.getElementById('projetoProximo')?.addEventListener('click', () => irPara(atual + 1));
@@ -87,6 +99,7 @@ function abrirModal(index) {
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add('ativo');
     document.body.style.overflow = 'hidden';
+    pausarAutoplay();
 }
 
 function fecharModal() {
@@ -94,6 +107,7 @@ function fecharModal() {
     overlay.classList.remove('ativo');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    iniciarAutoplay();
 }
 
 slides.forEach((wrapper) => {
