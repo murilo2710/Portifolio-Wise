@@ -62,8 +62,8 @@ const projetos = [
         link: '#'
     },
     {
-        nome: 'Projeto 02',
-        desc: 'Descricao deste projeto sera atualizada em breve.',
+        nome: 'Planner Estudantil',
+        desc: 'Sistema web desenvolvido com HTML, CSS, JavaScript, PHP e MySQL para organizacao da rotina academica. Inclui acompanhamento de tarefas, provas e compromissos, com integracao a API da Hugging Face para gerar planos de estudo personalizados com base nos dados de cada usuario.',
         tags: ['Angular', 'TypeScript', 'SCSS'],
         desktop: 'img/estudo-projeto02.png',
         link: '#'
