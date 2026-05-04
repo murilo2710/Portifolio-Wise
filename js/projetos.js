@@ -69,8 +69,8 @@ const projetos = [
         link: '#'
     },
     {
-        nome: 'Projeto 03',
-        desc: 'Descricao deste projeto sera atualizada em breve.',
+        nome: 'Planner Estudantil em Java',
+        desc: 'Aplicacao desktop desenvolvida em Java e JavaFX para organizacao academica, com CRUD completo de alunos, disciplinas e tarefas. O sistema inclui validacoes de entrada, associacao de tarefas por disciplina e mensagens de sucesso/erro para apoiar a rotina de estudos.',
         tags: ['React', 'TypeScript', 'Spring Boot'],
         desktop: 'img/planner-projeto03.png',
         link: '#'
