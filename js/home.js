@@ -426,16 +426,45 @@ const ContatoForm = {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
+            const botao = form.querySelector('button[type="submit"]');
+            const textoOriginal = botao ? botao.innerHTML : '';
+
             try {
-                await fetch(form.action, {
+                if (botao) {
+                    botao.disabled = true;
+                    botao.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Enviando...";
+                }
+
+                const resposta = await fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
                     headers: {
                         Accept: 'application/json'
                     }
                 });
+
+                if (!resposta.ok) throw new Error('Falha no envio');
+
+                form.reset();
+                if (botao) botao.innerHTML = "<i class='bx bx-check'></i> Mensagem enviada";
+
+                setTimeout(() => {
+                    if (botao) {
+                        botao.innerHTML = textoOriginal;
+                        botao.disabled = false;
+                    }
+                }, 2200);
             } catch (erro) {
                 console.error('Erro ao enviar formulario:', erro);
+
+                if (botao) {
+                    botao.innerHTML = "<i class='bx bx-error-circle'></i> Tente novamente";
+                    botao.disabled = false;
+                }
+
+                setTimeout(() => {
+                    if (botao) botao.innerHTML = textoOriginal;
+                }, 2200);
             }
         });
     }
