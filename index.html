@@ -394,20 +394,24 @@
         <section id="projetos" class="projetos">
             <h2 class="projetos-titulo"><span class="titulo-destaque">Projetos</span></h2>
             <div class="projetos-carrossel">
-                <div class="carrossel-dots carrossel-dots-esquerda" id="carrosselDots"></div>
+                <div class="carrossel-nav">
+                    <button class="carrossel-seta" id="projetoAnterior" aria-label="Projeto anterior"><i class='bx bx-chevron-up'></i></button>
+                    <div class="carrossel-dots carrossel-dots-esquerda" id="carrosselDots"></div>
+                    <button class="carrossel-seta" id="projetoProximo" aria-label="Proximo projeto"><i class='bx bx-chevron-down'></i></button>
+                </div>
                 <div class="carrossel-trilha">
-                    <div class="mockups-wrapper">
-                        <a href="#" class="projetos-link-externo" aria-label="Ver projeto"><i class='bx bx-link-external'></i></a>
+                    <div class="mockups-wrapper" data-index="0">
+                        <button class="projetos-abrir-modal" aria-label="Ver detalhes do projeto"><i class='bx bx-expand-alt'></i></button>
                         <img src="img/desktop-projeto01.png" alt="Versao desktop do projeto 01" class="mockup-desktop">
                         <img src="img/celular-projeto01.png" alt="Versao mobile do projeto 01" class="mockup-celular">
                     </div>
-                    <div class="mockups-wrapper">
-                        <a href="#" class="projetos-link-externo" aria-label="Ver projeto"><i class='bx bx-link-external'></i></a>
+                    <div class="mockups-wrapper" data-index="1">
+                        <button class="projetos-abrir-modal" aria-label="Ver detalhes do projeto"><i class='bx bx-expand-alt'></i></button>
                         <img src="img/estudo-projeto02.png" alt="Versao desktop do projeto 02" class="mockup-desktop">
                         <img src="img/estudo-celular-projeto02.png" alt="Versao mobile do projeto 02" class="mockup-celular">
                     </div>
-                    <div class="mockups-wrapper">
-                        <a href="#" class="projetos-link-externo" aria-label="Ver projeto"><i class='bx bx-link-external'></i></a>
+                    <div class="mockups-wrapper" data-index="2">
+                        <button class="projetos-abrir-modal" aria-label="Ver detalhes do projeto"><i class='bx bx-expand-alt'></i></button>
                         <img src="img/planner-projeto03.png" alt="Versao desktop do projeto 03" class="mockup-desktop">
                         <img src="img/planner-cell-projeto03.png" alt="Versao mobile do projeto 03" class="mockup-celular">
                     </div>
