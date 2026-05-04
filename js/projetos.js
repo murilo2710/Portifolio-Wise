@@ -40,3 +40,76 @@ setInterval(() => irPara(atual + 1), 7000);
 
 document.getElementById('projetoAnterior')?.addEventListener('click', () => irPara(atual - 1));
 document.getElementById('projetoProximo')?.addEventListener('click', () => irPara(atual + 1));
+
+const projetos = [
+    {
+        nome: 'Projeto 01',
+        desc: 'Descricao deste projeto sera atualizada em breve.',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        desktop: 'img/desktop-projeto01.png',
+        link: '#'
+    },
+    {
+        nome: 'Projeto 02',
+        desc: 'Descricao deste projeto sera atualizada em breve.',
+        tags: ['Angular', 'TypeScript', 'SCSS'],
+        desktop: 'img/estudo-projeto02.png',
+        link: '#'
+    },
+    {
+        nome: 'Projeto 03',
+        desc: 'Descricao deste projeto sera atualizada em breve.',
+        tags: ['React', 'TypeScript', 'Spring Boot'],
+        desktop: 'img/planner-projeto03.png',
+        link: '#'
+    }
+];
+
+const overlay = document.getElementById('modalProjeto');
+const btnFechar = document.getElementById('modalFechar');
+const modalDesktop = document.getElementById('modalDesktop');
+const modalTags = document.getElementById('modalTags');
+const modalNome = document.getElementById('modalNome');
+const modalDesc = document.getElementById('modalDesc');
+const modalLink = document.getElementById('modalLink');
+
+function abrirModal(index) {
+    const p = projetos[index];
+    if (!p || !overlay) return;
+
+    modalDesktop.src = p.desktop;
+    modalDesktop.alt = `Desktop - ${p.nome}`;
+    modalNome.textContent = p.nome;
+    modalDesc.textContent = p.desc;
+    modalLink.href = p.link;
+    modalTags.innerHTML = p.tags.map((tag) => `<span class="modal-tag">${tag}</span>`).join('');
+
+    overlay.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharModal() {
+    if (!overlay) return;
+    overlay.classList.remove('ativo');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+slides.forEach((wrapper) => {
+    wrapper.querySelector('.projetos-abrir-modal')?.addEventListener('click', () => {
+        abrirModal(Number(wrapper.dataset.index));
+    });
+});
+
+btnFechar?.addEventListener('click', fecharModal);
+
+overlay?.addEventListener('click', (event) => {
+    if (event.target === overlay) fecharModal();
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && overlay?.classList.contains('ativo')) {
+        fecharModal();
+    }
+});
