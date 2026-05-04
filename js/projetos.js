@@ -73,7 +73,7 @@ const projetos = [
         desc: 'Aplicacao desktop desenvolvida em Java e JavaFX para organizacao academica, com CRUD completo de alunos, disciplinas e tarefas. O sistema inclui validacoes de entrada, associacao de tarefas por disciplina e mensagens de sucesso/erro para apoiar a rotina de estudos.',
         tags: ['Java', 'JavaFX', 'POO', 'Collections', 'LocalDate'],
         desktop: 'img/planner-projeto03.png',
-        link: '#'
+        link: 'https://github.com/murilo2710/PROJETOJAVAFX'
     }
 ];
 
