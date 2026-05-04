@@ -418,6 +418,29 @@ const OrbitaAnimation = {
     }
 };
 
+const ContatoForm = {
+    inicializar() {
+        const form = document.querySelector('.contato-form');
+        if (!form) return;
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            try {
+                await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        Accept: 'application/json'
+                    }
+                });
+            } catch (erro) {
+                console.error('Erro ao enviar formulario:', erro);
+            }
+        });
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     TypewriterAnimation.iniciar();
     ScrollIndicator.inicializar();
@@ -427,4 +450,5 @@ document.addEventListener('DOMContentLoaded', () => {
     ExperienciaAnimation.inicializar();
     OrbitaAnimation.inicializar();
     PaginacaoCompetencias.inicializar();
+    ContatoForm.inicializar();
 });
