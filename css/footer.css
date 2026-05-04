@@ -1,0 +1,123 @@
+.rodape {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(245, 158, 11, 0.15);
+    padding: 48px 8% 32px;
+}
+
+.rodape-corpo {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.rodape-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.rodape-nav {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rodape-nav a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    letter-spacing: 0.02em;
+}
+
+.rodape-nav a:hover {
+    color: #f59e0b;
+}
+
+.rodape-icones {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.rodape-icone {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 22px;
+    background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.55;
+    transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.rodape-icone:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+}
+
+.rodape-base {
+    max-width: 1100px;
+    margin: 28px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.rodape-copyright {
+    font-size: 0.75rem;
+    color: #444;
+    letter-spacing: 0.04em;
+}
+
+.rodape-copyright span {
+    color: #f59e0b;
+}
+
+@media (max-width: 768px) {
+    .rodape {
+        padding: 40px 6% 28px;
+    }
+
+    .rodape-corpo {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .rodape-nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape-nav {
+        gap: 14px;
+    }
+
+    .rodape-nav a {
+        font-size: 0.8rem;
+    }
+
+    .rodape-icone {
+        font-size: 20px;
+    }
+}
