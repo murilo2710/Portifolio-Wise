@@ -58,6 +58,31 @@
     max-width: 1100px;
 }
 
+.carrossel-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.carrossel-seta {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.carrossel-seta:hover {
+    color: #f59e0b;
+}
+
 .carrossel-dots {
     display: flex;
     flex-direction: column;
@@ -91,6 +116,25 @@
     display: block;
 }
 
+.projetos-abrir-modal {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 1.6rem;
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.projetos-abrir-modal:hover {
+    color: #f59e0b;
+}
+
 .mockup-desktop {
     width: 100%;
     display: block;
@@ -113,6 +157,147 @@
 .mockup-celular.visivel {
     opacity: 1;
     transform: translateX(0);
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    position: relative;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    background: rgba(12, 12, 18, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    max-width: 1400px;
+    width: 95vw;
+    min-height: 680px;
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.ativo .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-mockup-desktop {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-info {
+    padding: 48px 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.modal-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.modal-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    color: #f59e0b;
+}
+
+.modal-nome {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.modal-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.75;
+    flex: 1;
+}
+
+.modal-acoes {
+    margin-top: auto;
+}
+
+.modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-fechar:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -167,7 +352,7 @@
         width: 100%;
     }
 
-    .projetos-link-externo {
+    .projetos-abrir-modal {
         top: 8px;
         right: 10px;
         font-size: 1.35rem;
