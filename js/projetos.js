@@ -37,3 +37,6 @@ function irPara(index) {
 irPara(0);
 
 setInterval(() => irPara(atual + 1), 7000);
+
+document.getElementById('projetoAnterior')?.addEventListener('click', () => irPara(atual - 1));
+document.getElementById('projetoProximo')?.addEventListener('click', () => irPara(atual + 1));
