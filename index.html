@@ -453,22 +453,22 @@
                     </div>
                 </div>
 
-                <form class="contato-form" novalidate>
+                <form class="contato-form" action="https://formspree.io/f/mrejpppe" method="POST" novalidate>
                     <div class="form-grupo">
                         <label for="nomeContato">Nome completo</label>
-                        <input type="text" id="nomeContato" placeholder="Seu nome">
+                        <input type="text" id="nomeContato" name="nome" placeholder="Seu nome">
                     </div>
                     <div class="form-grupo">
                         <label for="emailContato">E-mail</label>
-                        <input type="email" id="emailContato" placeholder="seu@email.com">
+                        <input type="email" id="emailContato" name="email" placeholder="seu@email.com">
                     </div>
                     <div class="form-grupo">
                         <label for="assuntoContato">Assunto</label>
-                        <input type="text" id="assuntoContato" placeholder="Sobre o que é?">
+                        <input type="text" id="assuntoContato" name="assunto" placeholder="Sobre o que é?">
                     </div>
                     <div class="form-grupo">
                         <label for="mensagemContato">Mensagem</label>
-                        <textarea id="mensagemContato" rows="5" placeholder="Descreva seu projeto ou dúvida..."></textarea>
+                        <textarea id="mensagemContato" name="mensagem" rows="5" placeholder="Descreva seu projeto ou dúvida..."></textarea>
                     </div>
                     <button type="submit" class="contato-btn">
                         <i class='bx bx-send'></i> Enviar mensagem
