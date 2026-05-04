@@ -115,3 +115,89 @@
     transform: translateX(0);
 }
 
+@media (max-width: 1024px) {
+    .projetos {
+        padding: 90px 6%;
+    }
+
+    .projetos-titulo {
+        font-size: clamp(2.1rem, 4vw, 2.6rem);
+        margin-bottom: 52px;
+    }
+
+    .projetos-carrossel {
+        gap: 16px;
+    }
+
+    .carrossel-trilha {
+        width: 100%;
+        max-width: 960px;
+    }
+
+    .mockup-celular {
+        width: 26%;
+        right: -1.5%;
+        bottom: -5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos {
+        padding: 80px 5%;
+    }
+
+    .projetos-titulo {
+        font-size: clamp(1.9rem, 6vw, 2.3rem);
+        margin-bottom: 40px;
+    }
+
+    .projetos-carrossel {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .carrossel-dots {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .carrossel-trilha {
+        width: 100%;
+    }
+
+    .projetos-link-externo {
+        top: 8px;
+        right: 10px;
+        font-size: 1.35rem;
+    }
+
+    .mockup-celular {
+        width: 36%;
+        right: -2%;
+        bottom: -8%;
+    }
+}
+
+@media (max-width: 520px) {
+    .projetos {
+        padding: 72px 5%;
+    }
+
+    .projetos-titulo {
+        margin-bottom: 32px;
+    }
+
+    .carrossel-dot {
+        width: 9px;
+        height: 9px;
+    }
+
+    .mockup-celular {
+        width: 42%;
+        right: -1%;
+        bottom: -10%;
+    }
+}
+
