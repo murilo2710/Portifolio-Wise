@@ -59,7 +59,7 @@ const projetos = [
         desc: 'Landing page desenvolvida em Angular para uma plataforma SaaS que ajuda concessionarias a automatizar a leitura de CRLV, organizar dados de veiculos e acompanhar vencimentos de documentos.',
         tags: ['Angular', 'TypeScript', 'SaaS', 'Automacao de Documentos'],
         desktop: 'img/desktop-projeto01.png',
-        link: '#'
+        link: 'https://github.com/murilo2710/Landing-Page-Vault'
     },
     {
         nome: 'Planner Estudantil',
