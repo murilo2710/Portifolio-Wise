@@ -56,7 +56,7 @@ document.getElementById('projetoProximo')?.addEventListener('click', () => irPar
 const projetos = [
     {
         nome: 'Vault - Gestao Inteligente de Documentos Veiculares',
-        desc: 'Descricao deste projeto sera atualizada em breve.',
+        desc: 'Landing page desenvolvida em Angular para uma plataforma SaaS que ajuda concessionarias a automatizar a leitura de CRLV, organizar dados de veiculos e acompanhar vencimentos de documentos.',
         tags: ['HTML', 'CSS', 'JavaScript'],
         desktop: 'img/desktop-projeto01.png',
         link: '#'
