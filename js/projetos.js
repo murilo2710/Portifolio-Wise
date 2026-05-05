@@ -57,7 +57,7 @@ const projetos = [
     {
         nome: 'Vault - Gestao Inteligente de Documentos Veiculares',
         desc: 'Landing page desenvolvida em Angular para uma plataforma SaaS que ajuda concessionarias a automatizar a leitura de CRLV, organizar dados de veiculos e acompanhar vencimentos de documentos.',
-        tags: ['HTML', 'CSS', 'JavaScript'],
+        tags: ['Angular', 'TypeScript', 'SaaS', 'Automacao de Documentos'],
         desktop: 'img/desktop-projeto01.png',
         link: '#'
     },
