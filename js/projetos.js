@@ -74,6 +74,13 @@ const projetos = [
         tags: ['Java', 'JavaFX', 'POO', 'Collections', 'LocalDate'],
         desktop: 'img/planner-projeto03.png',
         link: 'https://github.com/murilo2710/PROJETOJAVAFX'
+    },
+    {
+        nome: 'Chat ao Vivo Nexus',
+        desc: 'Servidor de chat em Python com suporte a conexoes simultaneas, mensagens publicas e privadas, expulsao de usuarios por administrador e interface grafica simples para exibicao das conversas.',
+        tags: ['Python', 'Sockets', 'Threading', 'Tkinter', 'Cliente-Servidor'],
+        desktop: 'img/NEXUS-DESKTOP.png',
+        link: 'https://github.com/murilo2710/Projeto-Chat-Nexus'
     }
 ];
 
