@@ -55,7 +55,7 @@ document.getElementById('projetoProximo')?.addEventListener('click', () => irPar
 
 const projetos = [
     {
-        nome: 'Projeto 01',
+        nome: 'Vault - Gestao Inteligente de Documentos Veiculares',
         desc: 'Descricao deste projeto sera atualizada em breve.',
         tags: ['HTML', 'CSS', 'JavaScript'],
         desktop: 'img/desktop-projeto01.png',
