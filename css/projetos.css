@@ -49,12 +49,14 @@
 .projetos-carrossel {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .carrossel-trilha {
     position: relative;
-    width: 90%;
+    width: min(1100px, 90vw);
     max-width: 1100px;
 }
 
@@ -365,13 +367,39 @@
     .carrossel-nav {
         flex-direction: row;
         justify-content: center;
-        gap: 14px;
+        align-items: center;
+        gap: 18px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .carrossel-seta {
+        position: static;
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 26px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+    }
+
+    #projetoAnterior i {
+        display: inline-block;
+        transform: rotate(-90deg);
+    }
+
+    #projetoProximo i {
+        display: inline-block;
+        transform: rotate(-90deg);
     }
 
     .carrossel-dots {
         flex-direction: row;
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
+        align-items: center;
     }
 
     .carrossel-trilha {
